@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10)
+
+# Force Unix Makefiles generator and set GCC compilers
+set(CMAKE_GENERATOR "Unix Makefiles" CACHE INTERNAL "" FORCE)
+set(CMAKE_C_COMPILER gcc)
+set(CMAKE_CXX_COMPILER g++)
+
+# Projektets navn
+project(b2)
+
+# Sæt standard C++-version
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+# Gør headers tilgængelige for alle kildefiler
+include_directories(${CMAKE_SOURCE_DIR}/headers)
+
+# Find alle .cpp filer i src/ folderen
+file(GLOB SOURCES "source/*.cpp")
+
+# Opret exe fil fra main.cpp og andre cpp-filer
+add_executable(b2 ${SOURCES})
