@@ -1,6 +1,7 @@
 **/.vscode
 **/build/
 **/myenv/
+config.yaml
 
 # Prerequisites
 *.d
