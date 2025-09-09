@@ -1,11 +1,12 @@
 ﻿import numpy as np
 import google.generativeai as genai
-from ConfigManager import ConfigManager
+from src.ConfigManager import ConfigManager
 
 class VoiceResponse:
     def __init__(self, pre_prompt=None):
         self.config = ConfigManager()
 
+        # loads prompt from yaml
         if pre_prompt == None:
             pre_prompt = self.config.get_pre_prompt()
         else:
@@ -82,7 +83,7 @@ class VoiceResponse:
 
 
 
-# Test code
+# tester
 if __name__ == "__main__":
     try:
         voice = VoiceResponse()

@@ -3,7 +3,7 @@ import pyaudio
 import numpy as np
 
 
-class speechReco:
+class SpeechReco:
     def __init__(self, model_size = "base"):
         self.model = whisper.load_model(model_size) # load whisper model model_size
         
@@ -69,13 +69,16 @@ class speechReco:
         return result["text"]
 
     def wakeAndRecord(self):
-        self.wakeUpCall("hey b2")
+        self.wakeUpCall("b2")
         
+        return self.convertAudioToText(self.recordSpeech(5))
+
+    def record(self):
         return self.convertAudioToText(self.recordSpeech(5))
 
 
 if __name__ == "__main__":
-    speech = speechReco()
+    speech = SpeechReco()
 
     print(speech.wakeAndRecord()) 
     

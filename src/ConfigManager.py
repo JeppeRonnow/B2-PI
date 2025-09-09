@@ -5,7 +5,8 @@ from pathlib import Path
 
 class ConfigManager:
     def __init__(self, config_path="config.yaml"):
-        self.config_path = config_path
+        base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        self.config_path = os.path.join(base_dir, config_path)
         self.config = self.load_config()
     
     def load_config(self):
