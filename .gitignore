@@ -13,6 +13,7 @@ config.yaml
 
 # Python
 __pycache__/
+pycache/
 *.pyc
 myenv/
 venv/
